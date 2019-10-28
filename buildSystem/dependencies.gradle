@@ -1,0 +1,25 @@
+ext {
+    kotlinVersion = "1.3.50"
+    gradleVersion = "3.5.1"
+    compileSdkVersion = 29
+    buildToolsVersion = "29.0.2"
+    minSdkVersion = 21
+    targetSdkVersion = 29
+}
+
+def supportVersion = "1.1.0"
+def constraintLayoutVersion = "1.1.3"
+def jUnitVersion = "4.12"
+def espressoVersion = "3.2.0"
+def testRunnerVersion = "1.2.0"
+
+ext.deps = [
+    appCompat       : "androidx.appcompat:appcompat:$supportVersion",
+    coreKtx         : "androidx.core:core-ktx:$supportVersion",
+    kotlinStd       : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+    jUnit           : "junit:junit:$jUnitVersion",
+    espresso        : "androidx.test.espresso:espresso-core:$espressoVersion",
+    testRunner      : "androidx.test:runner:$testRunnerVersion",
+
+    constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+]
