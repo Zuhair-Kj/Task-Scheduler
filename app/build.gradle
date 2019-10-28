@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -25,6 +27,8 @@ android {
 
 dependencies {
     implementation project(":core")
+    kapt deps.daggerAnnotationProcessor
+    kapt deps.daggerCompiler
     implementation deps.constraintLayout
     testImplementation deps.jUnit
     androidTestImplementation deps.espresso

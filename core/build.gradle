@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -24,11 +25,23 @@ android {
 }
 
 dependencies {
-    api deps.kotlinStd
+    implementation deps.kotlinStd
     api deps.appCompat
     api deps.coreKtx
+    api deps.dagger
+    api deps.daggerAndroid
+    api deps.daggerAndroidSupport
+    kapt deps.daggerCompiler
+    kapt deps.daggerAnnotationProcessor
+    api deps.rxJava2
+    api deps.rxAndroid
+    api deps.okhttp3
+    api deps.gson
+    api deps.retrofit2
+    api deps.retrofitConverterGson
+    api deps.retrofitAdapterRxJava
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    testImplementation deps.jUnit
+    androidTestImplementation deps.testRunner
+    androidTestImplementation deps.espresso
 }
