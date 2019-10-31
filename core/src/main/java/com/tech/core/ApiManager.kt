@@ -1,6 +1,6 @@
 package com.tech.core
 
-import com.tech.core.api.EngineersApiClient
+import com.tech.core.api.clients.EngineersApiClient
 import com.tech.core.models.Engineer
 import io.reactivex.Single
 import javax.inject.Inject

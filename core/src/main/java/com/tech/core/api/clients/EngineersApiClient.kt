@@ -1,4 +1,4 @@
-package com.tech.core.api
+package com.tech.core.api.clients
 
 import com.tech.core.models.Engineer
 import io.reactivex.Single

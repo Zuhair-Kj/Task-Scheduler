@@ -3,7 +3,7 @@ package com.tech.core.injection
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.tech.core.BASE_URL
-import com.tech.core.api.EngineersApiClient
+import com.tech.core.api.clients.EngineersApiClient
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
