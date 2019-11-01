@@ -8,6 +8,9 @@ class EngineersListObserver(private val mvpView: EngineersListMvp.View?) : Dispo
     override fun onSuccess(t: List<Engineer>) {
         mvpView?.apply {
             hideLoading()
+            t.forEach{
+                it.init()
+            }
             populateResults(t)
         }
     }
