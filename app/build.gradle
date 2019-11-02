@@ -39,6 +39,7 @@ dependencies {
     kapt deps.dataBindingCompiler
     implementation deps.recyclerView
     implementation deps.cardview
+    implementation deps.design
     androidTestImplementation deps.espresso
     androidTestImplementation deps.testRunner
 }

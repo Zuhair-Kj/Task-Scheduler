@@ -22,6 +22,7 @@ def injectVersion = "1"
 def parcelerVersion = "1.1.12"
 def supRecyclerViewVersion = "1.0.0"
 def supCardViewVersion = "1.0.0"
+def materialVersion = "1.0.0"
 
 ext.deps = [
     appCompat: "androidx.appcompat:appcompat:$supportVersion",
@@ -55,4 +56,5 @@ ext.deps = [
     constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
     recyclerView:           "androidx.recyclerview:recyclerview:${supRecyclerViewVersion}",
     cardview:               "androidx.cardview:cardview:${supCardViewVersion}",
+    design: "com.google.android.material:material:${materialVersion}"
 ]

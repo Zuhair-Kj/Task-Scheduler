@@ -5,28 +5,30 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.tech.core.Scheduler
 import com.tech.core.models.Engineer
 import com.tech.core.mvp.BaseMvpActivity
 import com.tech.taskscheduler.R
 import com.tech.taskscheduler.databinding.ActivityEngineersListBinding
+import com.tech.taskscheduler.schedule.ScheduleActivity
 import dagger.android.AndroidInjection
 import java.lang.StringBuilder
 
 class EngineersListActivity :
     BaseMvpActivity<EngineersListPresenter, EngineersListMvp.View>(),
-    EngineersListMvp.View {
+    EngineersListMvp.View, View.OnClickListener {
 
     lateinit var binding: ActivityEngineersListBinding
     lateinit var progressBar: ProgressBar
     lateinit var recyclerView: RecyclerView
     lateinit var engineersAdapter: EngineersAdapter
+    lateinit var fabButton: FloatingActionButton
     private val cellSpacing by lazy { this.resources.getDimension(R.dimen.margin_small) }
-
-    val scheduler = Scheduler(10, 3, 2)
 
     override fun injectAcivity() {
         AndroidInjection.inject(this)
@@ -38,8 +40,9 @@ class EngineersListActivity :
         setContentView(binding.root)
         progressBar = binding.progressCircular
         recyclerView = binding.recyclerView
-        engineersAdapter =
-            EngineersAdapter(mutableListOf(), this)
+        fabButton = binding.fab
+        engineersAdapter = EngineersAdapter(mutableListOf(), this)
+        fabButton.setOnClickListener(this)
         recyclerView.layoutManager = GridLayoutManager(
             this,
             2,
@@ -56,6 +59,7 @@ class EngineersListActivity :
 
     override fun showLoading() {
         progressBar.visibility = View.VISIBLE
+        fabButton.hide()
     }
 
     override fun hideLoading() {
@@ -63,7 +67,9 @@ class EngineersListActivity :
     }
 
     override fun populateResults(engineersList: List<Engineer>) {
+        engineersAdapter.clear()
         engineersAdapter.addItems(engineersList)
+        fabButton.show()
     }
 
     override fun showError(errorMessage: String) {
@@ -90,5 +96,11 @@ class EngineersListActivity :
         }
 
         return stringBuilder.toString()
+    }
+
+    override fun onClick(view: View) {
+        when(view.id) {
+            R.id.fab -> ScheduleActivity.startScheduleAdtivity(this, presenter.engineersList)
+        }
     }
 }

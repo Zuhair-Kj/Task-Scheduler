@@ -4,7 +4,7 @@ import com.tech.core.models.Engineer
 import com.tech.core.models.NONE
 
 // The number of shits an engineer can do is not here as each engineer may have his own number (in the future).
-class Scheduler(private val numberOfDays: Int, private val shiftsPerDay: Int, private val minShiftsQota: Int) {
+class Scheduler(private val numberOfDays: Int, private val shiftsPerDay: Int) {
     fun scheduleWork(engineers: List<Engineer>): List<List<Engineer>> {
         val result = mutableListOf<List<Engineer>>()
 
