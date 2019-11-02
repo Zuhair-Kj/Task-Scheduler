@@ -30,6 +30,8 @@ dependencies {
     kapt deps.daggerAnnotationProcessor
     kapt deps.daggerCompiler
     implementation deps.constraintLayout
+    annotationProcessor deps.parcelerAnnotationProcessor
+    kapt deps.parcelerAnnotationProcessor
     testImplementation deps.jUnit
     androidTestImplementation deps.espresso
     androidTestImplementation deps.testRunner

@@ -16,18 +16,18 @@ import javax.inject.Inject
 class EngineersListActivity :
     BaseMvpActivity<EngineersListPresenter, EngineersListMvp.View>(), EngineersListMvp.View {
 
-    @Inject
-    lateinit var apiManager: ApiManager
-
     lateinit var textView: TextView
 
     val scheduler = Scheduler(10, 3, 2)
+
+    override fun injectAcivity() {
+        AndroidInjection.inject(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_engineers_list)
         textView = findViewById(R.id.text)
-        AndroidInjection.inject(this)
     }
 
     override fun showLoading() {

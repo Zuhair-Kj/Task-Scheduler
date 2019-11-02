@@ -1,8 +1,12 @@
 package com.tech.core.models
 
+import org.parceler.Parcel
+import org.parceler.ParcelConstructor
+
 const val NONE = -1
 
-data class Engineer constructor(
+@Parcel(Parcel.Serialization.BEAN)
+data class Engineer @ParcelConstructor constructor(
     val id: Int,
     val name: String?,
     var coolOffDays: Int,

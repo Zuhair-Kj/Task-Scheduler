@@ -19,6 +19,7 @@ def gsonVersion = '2.8.5'
 def retrofit2Version = '2.6.1'
 def okhttp3Version = '3.10.0'
 def injectVersion = "1"
+def parcelerVersion = "1.1.12"
 
 ext.deps = [
     appCompat: "androidx.appcompat:appcompat:$supportVersion",
@@ -42,6 +43,10 @@ ext.deps = [
     daggerAnnotationProcessor: "com.google.dagger:dagger-android-processor:$daggerVersion",
     daggerCompiler: "com.google.dagger:dagger-compiler:$daggerVersion",
     inject: "javax.inject:javax.inject:${injectVersion}",
+
+    // Parceler Deps
+    parceler: "org.parceler:parceler-api:${parcelerVersion}",
+    parcelerAnnotationProcessor: "org.parceler:parceler:${parcelerVersion}",
     // UI
     constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 ]

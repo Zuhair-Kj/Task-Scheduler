@@ -40,6 +40,9 @@ dependencies {
     api deps.retrofit2
     api deps.retrofitConverterGson
     api deps.retrofitAdapterRxJava
+    api deps.parceler
+    annotationProcessor deps.parcelerAnnotationProcessor
+    kapt deps.parcelerAnnotationProcessor
 
     testImplementation deps.jUnit
     androidTestImplementation deps.testRunner

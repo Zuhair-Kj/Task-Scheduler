@@ -2,17 +2,17 @@ package com.tech.taskscheduler.engineersList.api
 
 import com.tech.core.models.Engineer
 import com.tech.taskscheduler.engineersList.EngineersListMvp
+import com.tech.taskscheduler.engineersList.EngineersListPresenter
 import io.reactivex.observers.DisposableSingleObserver
 
-class EngineersListObserver(private val mvpView: EngineersListMvp.View?) : DisposableSingleObserver<List<Engineer>>() {
-    override fun onSuccess(t: List<Engineer>) {
-        mvpView?.apply {
-            hideLoading()
-            t.forEach{
-                it.init()
-            }
-            populateResults(t)
+class EngineersListObserver(private val mvpView: EngineersListMvp.View?, private val mvpPresenter: EngineersListPresenter)
+    : DisposableSingleObserver<List<Engineer>>() {
+    override fun onSuccess(list: List<Engineer>) {
+        mvpView?.hideLoading()
+        list.forEach{
+            it.init()
         }
+        mvpPresenter.onEngineersListFetched(list)
     }
 
     override fun onError(e: Throwable) {
