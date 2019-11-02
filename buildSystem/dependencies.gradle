@@ -20,6 +20,8 @@ def retrofit2Version = '2.6.1'
 def okhttp3Version = '3.10.0'
 def injectVersion = "1"
 def parcelerVersion = "1.1.12"
+def supRecyclerViewVersion = "1.0.0"
+def supCardViewVersion = "1.0.0"
 
 ext.deps = [
     appCompat: "androidx.appcompat:appcompat:$supportVersion",
@@ -47,6 +49,10 @@ ext.deps = [
     // Parceler Deps
     parceler: "org.parceler:parceler-api:${parcelerVersion}",
     parcelerAnnotationProcessor: "org.parceler:parceler:${parcelerVersion}",
+    // Data binding
+    dataBindingCompiler:     "androidx.databinding:databinding-compiler:${gradleVersion}",
     // UI
-    constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+    recyclerView:           "androidx.recyclerview:recyclerview:${supRecyclerViewVersion}",
+    cardview:               "androidx.cardview:cardview:${supCardViewVersion}",
 ]

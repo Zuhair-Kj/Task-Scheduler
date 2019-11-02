@@ -23,6 +23,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -33,6 +36,9 @@ dependencies {
     annotationProcessor deps.parcelerAnnotationProcessor
     kapt deps.parcelerAnnotationProcessor
     testImplementation deps.jUnit
+    kapt deps.dataBindingCompiler
+    implementation deps.recyclerView
+    implementation deps.cardview
     androidTestImplementation deps.espresso
     androidTestImplementation deps.testRunner
 }

@@ -1,6 +1,6 @@
 package com.tech.taskscheduler
 
-import com.tech.taskscheduler.engineersList.EngineersListActivity
+import com.tech.taskscheduler.engineersList.browse.EngineersListActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

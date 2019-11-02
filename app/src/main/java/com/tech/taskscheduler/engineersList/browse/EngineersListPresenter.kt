@@ -1,4 +1,4 @@
-package com.tech.taskscheduler.engineersList
+package com.tech.taskscheduler.engineersList.browse
 
 import android.os.Bundle
 import android.os.Parcelable
@@ -12,7 +12,8 @@ import org.parceler.Parcels
 import javax.inject.Inject
 
 class EngineersListPresenter @Inject constructor(private val apiManager: ApiManager) :
-    BaseMvpPresenter<EngineersListMvp.View>(), EngineersListMvp.Presenter {
+    BaseMvpPresenter<EngineersListMvp.View>(),
+    EngineersListMvp.Presenter {
     var engineersList = mutableListOf<Engineer>()
     override fun fetchEngineersList() {
         if (engineersList.isNotEmpty())
