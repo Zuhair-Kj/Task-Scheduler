@@ -11,6 +11,7 @@ import io.reactivex.schedulers.Schedulers
 import org.parceler.Parcels
 import javax.inject.Inject
 
+const val PARCEL_KEY = "EngineersList"
 class EngineersListPresenter @Inject constructor(private val apiManager: ApiManager) :
     BaseMvpPresenter<EngineersListMvp.View>(),
     EngineersListMvp.Presenter {
@@ -35,12 +36,12 @@ class EngineersListPresenter @Inject constructor(private val apiManager: ApiMana
     }
 
     override fun saveState(outState: Bundle) {
-        outState.putParcelable("EngineersList", Parcels.wrap(engineersList))
+        outState.putParcelable(PARCEL_KEY, Parcels.wrap(engineersList))
     }
 
     override fun restoreState(savedState: Bundle) {
         engineersList.addAll(
-            Parcels.unwrap<MutableList<Engineer>>(savedState.get("EngineersList") as Parcelable)
+            Parcels.unwrap<MutableList<Engineer>>(savedState.get(PARCEL_KEY) as Parcelable)
         )
         engineersList.forEach { it.init() }
     }

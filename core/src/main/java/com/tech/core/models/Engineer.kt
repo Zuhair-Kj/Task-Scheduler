@@ -1,5 +1,6 @@
 package com.tech.core.models
 
+import com.tech.core.Settings
 import org.parceler.Parcel
 import org.parceler.ParcelConstructor
 
@@ -14,11 +15,11 @@ data class Engineer @ParcelConstructor constructor(
     var lastShiftDone: Int
 ){
     fun init() {
-        coolOffDays = 1
+        coolOffDays = Settings.NUMBER_OF_COOL_OFF_DAYS
         lastShiftDone = NONE
     }
 
-    fun assignwork(dayIndex: Int) {
+    fun assignWork(dayIndex: Int) {
         this.shiftsDone++
         this.lastShiftDone = dayIndex
     }
