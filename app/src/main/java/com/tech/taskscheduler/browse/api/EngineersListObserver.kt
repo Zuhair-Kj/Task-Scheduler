@@ -2,10 +2,10 @@ package com.tech.taskscheduler.browse.api
 
 import com.tech.core.models.Engineer
 import com.tech.taskscheduler.browse.BrowseMvp
-import com.tech.taskscheduler.browse.EngineersListPresenter
+import com.tech.taskscheduler.browse.BrowsePresenter
 import io.reactivex.observers.DisposableSingleObserver
 
-class EngineersListObserver(private val mvpView: BrowseMvp.View?, private val mvpPresenter: EngineersListPresenter)
+class EngineersListObserver(private val mvpView: BrowseMvp.View?, private val mvpPresenter: BrowsePresenter)
     : DisposableSingleObserver<List<Engineer>>() {
     override fun onSuccess(list: List<Engineer>) {
         mvpView?.hideLoading()

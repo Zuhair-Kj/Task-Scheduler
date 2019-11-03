@@ -5,6 +5,7 @@ import android.os.Parcelable
 import com.tech.core.ApiManager
 import com.tech.core.models.Engineer
 import com.tech.core.mvp.BaseMvpPresenter
+import com.tech.taskscheduler.browse.api.EngineersListApiCall
 import com.tech.taskscheduler.browse.api.EngineersListObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -12,7 +13,7 @@ import org.parceler.Parcels
 import javax.inject.Inject
 
 const val PARCEL_KEY = "EngineersList"
-class EngineersListPresenter @Inject constructor(private val apiManager: ApiManager) :
+class BrowsePresenter @Inject constructor(private val engineersListApiCall: EngineersListApiCall) :
     BaseMvpPresenter<BrowseMvp.View>(),
     BrowseMvp.Presenter {
     var engineersList = mutableListOf<Engineer>()
@@ -20,10 +21,7 @@ class EngineersListPresenter @Inject constructor(private val apiManager: ApiMana
         if (engineersList.isNotEmpty())
             mvpView?.populateResults(engineersList)
         else {
-            apiManager.getEngineers()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(EngineersListObserver(mvpView, this))
+            engineersListApiCall.execute(EngineersListObserver(mvpView, this))
         }
     }
 

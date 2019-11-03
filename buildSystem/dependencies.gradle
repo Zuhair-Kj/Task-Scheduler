@@ -61,5 +61,7 @@ ext.deps = [
     design: "com.google.android.material:material:${materialVersion}",
     mockito: "org.mockito:mockito-core:$mockitoCoreVersion",
     mockitoInline: "org.mockito:mockito-inline:${mockitoCoreVersion}",
-    mockitoKotlin: "com.nhaarman:mockito-kotlin-kt1.1:$mockitoKotlinVersion"
+    mockitoKotlin: "com.nhaarman:mockito-kotlin-kt1.1:$mockitoKotlinVersion",
+    mockitoKotlinSupport: "com.nhaarman.mockitokotlin2:mockito-kotlin:+"
+
 ]

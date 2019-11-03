@@ -45,4 +45,5 @@ dependencies {
     testImplementation deps.mockitoInline
     testImplementation deps.mockito
     testImplementation deps.mockitoKotlin
+    testImplementation deps.mockitoKotlinSupport
 }

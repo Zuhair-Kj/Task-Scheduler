@@ -18,7 +18,7 @@ import com.tech.taskscheduler.schedule.ScheduleActivity
 import dagger.android.AndroidInjection
 
 class BrowseActivity :
-    BaseMvpActivity<EngineersListPresenter, BrowseMvp.View>(),
+    BaseMvpActivity<BrowsePresenter, BrowseMvp.View>(),
     BrowseMvp.View, View.OnClickListener {
 
     private lateinit var binding: ActivityEngineersListBinding
