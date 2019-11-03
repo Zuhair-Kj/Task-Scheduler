@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".MainApplication">
-        <activity android:name=".engineersList.browse.EngineersListActivity">
+        <activity android:name=".engineersList.browse.EngineersListActivity"
+            android:label="@string/toolbar_browse">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +20,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".schedule.ScheduleActivity">
+        <activity android:name=".schedule.ScheduleActivity"
+            android:label="@string/toolbar_schedule">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>

@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextNormal" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TextSmall" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>

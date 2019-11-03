@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="engineer_cell_width">120dp</dimen>
-    <dimen name="engineer_cell_height">100dp</dimen>
+    <dimen name="engineer_cell_height">120dp</dimen>
+    <dimen name="work_day_cell_width">120dp</dimen>
+    <dimen name="work_day_cell_height">120dp</dimen>
     <dimen name="margin_large">16dp</dimen>
     <dimen name="margin_medium">8dp</dimen>
     <dimen name="margin_small">4dp</dimen>
+    <dimen name="font_normal">18sp</dimen>
+    <dimen name="font_small">14sp</dimen>
+    <dimen name="cellRadius">5dp</dimen>
 </resources>
