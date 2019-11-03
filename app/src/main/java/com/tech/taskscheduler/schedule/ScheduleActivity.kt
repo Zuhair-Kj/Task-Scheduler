@@ -5,8 +5,6 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.TextView
-import android.widget.Toast
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,10 +15,8 @@ import com.tech.core.models.WorkDay
 import com.tech.core.mvp.BaseMvpActivity
 import com.tech.taskscheduler.R
 import com.tech.taskscheduler.databinding.ActivityScheduleBinding
-import com.tech.taskscheduler.engineersList.browse.EngineersListItemsDecorator
 import dagger.android.AndroidInjection
 import org.parceler.Parcels
-import java.lang.StringBuilder
 
 const val KEY_ENGINEERS_LIST = "arg_engineers_list"
 class ScheduleActivity: BaseMvpActivity<SchedulePresenter, ScheduleMvp.View>(), ScheduleMvp.View {

@@ -42,4 +42,7 @@ dependencies {
     implementation deps.design
     androidTestImplementation deps.espresso
     androidTestImplementation deps.testRunner
+    testImplementation deps.mockitoInline
+    testImplementation deps.mockito
+    testImplementation deps.mockitoKotlin
 }

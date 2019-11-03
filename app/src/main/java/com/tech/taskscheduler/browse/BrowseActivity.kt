@@ -1,8 +1,6 @@
-package com.tech.taskscheduler.engineersList.browse
+package com.tech.taskscheduler.browse
 
-import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ProgressBar
@@ -19,9 +17,9 @@ import com.tech.taskscheduler.databinding.ActivityEngineersListBinding
 import com.tech.taskscheduler.schedule.ScheduleActivity
 import dagger.android.AndroidInjection
 
-class EngineersListActivity :
-    BaseMvpActivity<EngineersListPresenter, EngineersListMvp.View>(),
-    EngineersListMvp.View, View.OnClickListener {
+class BrowseActivity :
+    BaseMvpActivity<EngineersListPresenter, BrowseMvp.View>(),
+    BrowseMvp.View, View.OnClickListener {
 
     private lateinit var binding: ActivityEngineersListBinding
     private lateinit var progressBar: ProgressBar
@@ -44,7 +42,8 @@ class EngineersListActivity :
         fabButton = binding.fab
         coordinatorLayout = binding.coordinatorLayout
 
-        engineersAdapter = EngineersAdapter(mutableListOf(), this)
+        engineersAdapter =
+            EngineersAdapter(mutableListOf(), this)
         fabButton.setOnClickListener(this)
         recyclerView.layoutManager = GridLayoutManager(
             this,

@@ -1,4 +1,4 @@
-package com.tech.taskscheduler.engineersList.browse
+package com.tech.taskscheduler.browse
 
 import android.graphics.Rect
 import android.view.View

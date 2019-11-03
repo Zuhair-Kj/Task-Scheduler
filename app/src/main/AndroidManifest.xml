@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".MainApplication">
-        <activity android:name=".engineersList.browse.EngineersListActivity"
+        <activity android:name=".browse.BrowseActivity"
             android:label="@string/toolbar_browse">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

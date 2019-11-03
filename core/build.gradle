@@ -47,4 +47,7 @@ dependencies {
     testImplementation deps.jUnit
     androidTestImplementation deps.testRunner
     androidTestImplementation deps.espresso
+    testImplementation deps.mockitoInline
+    testImplementation deps.mockito
+    testImplementation deps.mockitoKotlin
 }

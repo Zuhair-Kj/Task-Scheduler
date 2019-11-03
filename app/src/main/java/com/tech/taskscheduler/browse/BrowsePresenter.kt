@@ -1,11 +1,11 @@
-package com.tech.taskscheduler.engineersList.browse
+package com.tech.taskscheduler.browse
 
 import android.os.Bundle
 import android.os.Parcelable
 import com.tech.core.ApiManager
 import com.tech.core.models.Engineer
 import com.tech.core.mvp.BaseMvpPresenter
-import com.tech.taskscheduler.engineersList.api.EngineersListObserver
+import com.tech.taskscheduler.browse.api.EngineersListObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import org.parceler.Parcels
@@ -13,8 +13,8 @@ import javax.inject.Inject
 
 const val PARCEL_KEY = "EngineersList"
 class EngineersListPresenter @Inject constructor(private val apiManager: ApiManager) :
-    BaseMvpPresenter<EngineersListMvp.View>(),
-    EngineersListMvp.Presenter {
+    BaseMvpPresenter<BrowseMvp.View>(),
+    BrowseMvp.Presenter {
     var engineersList = mutableListOf<Engineer>()
     override fun fetchEngineersList() {
         if (engineersList.isNotEmpty())

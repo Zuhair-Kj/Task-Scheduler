@@ -23,6 +23,8 @@ def parcelerVersion = "1.1.12"
 def supRecyclerViewVersion = "1.0.0"
 def supCardViewVersion = "1.0.0"
 def materialVersion = "1.0.0"
+def mockitoCoreVersion = "2.23.0"
+def mockitoKotlinVersion = "1.5.0"
 
 ext.deps = [
     appCompat: "androidx.appcompat:appcompat:$supportVersion",
@@ -56,5 +58,8 @@ ext.deps = [
     constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
     recyclerView:           "androidx.recyclerview:recyclerview:${supRecyclerViewVersion}",
     cardview:               "androidx.cardview:cardview:${supCardViewVersion}",
-    design: "com.google.android.material:material:${materialVersion}"
+    design: "com.google.android.material:material:${materialVersion}",
+    mockito: "org.mockito:mockito-core:$mockitoCoreVersion",
+    mockitoInline: "org.mockito:mockito-inline:${mockitoCoreVersion}",
+    mockitoKotlin: "com.nhaarman:mockito-kotlin-kt1.1:$mockitoKotlinVersion"
 ]

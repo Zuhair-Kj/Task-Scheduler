@@ -1,4 +1,4 @@
-package com.tech.taskscheduler.engineersList.browse
+package com.tech.taskscheduler.browse
 
 import android.content.Context
 import android.view.LayoutInflater

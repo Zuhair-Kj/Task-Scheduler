@@ -1,4 +1,4 @@
-package com.tech.taskscheduler.engineersList.browse
+package com.tech.taskscheduler.browse
 
 import androidx.recyclerview.widget.RecyclerView
 import com.tech.core.models.Engineer
