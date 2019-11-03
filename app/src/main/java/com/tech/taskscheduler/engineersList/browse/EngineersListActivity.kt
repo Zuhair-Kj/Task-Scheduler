@@ -5,19 +5,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.tech.core.Scheduler
 import com.tech.core.models.Engineer
 import com.tech.core.mvp.BaseMvpActivity
 import com.tech.taskscheduler.R
 import com.tech.taskscheduler.databinding.ActivityEngineersListBinding
 import com.tech.taskscheduler.schedule.ScheduleActivity
 import dagger.android.AndroidInjection
-import java.lang.StringBuilder
 
 class EngineersListActivity :
     BaseMvpActivity<EngineersListPresenter, EngineersListMvp.View>(),
@@ -78,24 +75,6 @@ class EngineersListActivity :
 
     override fun onPresenterAttached() {
         presenter.fetchEngineersList()
-    }
-
-    fun organiseOutput(schedule: List<List<Engineer>>): String {
-        val stringBuilder = StringBuilder()
-        for(i in schedule.indices) {
-            if (schedule[i].isNotEmpty())
-                stringBuilder.appendln("Day ${i+1} : ${stringifyList(schedule[i])}")
-        }
-        return stringBuilder.toString()
-    }
-
-    fun stringifyList(engineers: List<Engineer>): String {
-        val stringBuilder = StringBuilder()
-        engineers.forEach {
-            stringBuilder.append("${it.name},")
-        }
-
-        return stringBuilder.toString()
     }
 
     override fun onClick(view: View) {
